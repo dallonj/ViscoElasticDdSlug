@@ -1,0 +1,70 @@
+npst_cells=1 50      18			Number of PST cells
+tfinal=500     00245909080802971060065074051077310526
+print_interval=.2    print every minutes (.2 for normal runs)
+dt=0.001                	Size of Timestep for motion (in minutes)
+
+
+cellvisc=1.              451   22500.			Viscocity (drag) between cells mu*(vi-vj) nN min/mm) it is u_c_spsp  (adhesion_drag)
+cellvisc=1.              451    22500.			Viscocity (drag) between cells mu*(vi-vj) nN min/mm) it is u_c_spst
+cellvisc=1.              451   22500.			Viscocity (drag) between cells mu*(vi-vj) nN min/mm) it is u_c_stst
+
+cellvisc=.001                			Adhesion normal force between cells nN min/mm) it is adhesion_normal_spsp  (alpha)
+cellvisc=.001               			Adhesion normal force between cells nN min/mm) it is adhesion_normal_spst
+cellvisc=.001                 			Adhesion normal force between cells nN min/mm) it is adhesion_normal_stst
+
+
+
+
+For PSP Cells
+
+visc=451.		        Viscocity in dx is dt*F/visc (in nN min/mm) it is u_s
+viscfactor=1			Increases viscosity for boundary cells
+param1a=100               parameter in nonlinear spring function a axis
+k2a=1 4330    150  75            Surface tension in  nN/mm a axis  for Dd it is 4330 nN/mm see Schwarz 2000 J Cell Science
+k1a=100    23800   23800    50    10      not used
+mu1a=160 550 5500    50.    10.   	20000input as mu.  It is changed to  1/mu.  mu is the dash pot coefficient and has units nN min/mm 8.3
+param1b=100              parameter in nonlinear spring function b axis
+k2b=1 4330  150  75             Surface tension in  nN/mm b axis for leucocytes it is 35 nN/mm see Evans and Yeung 1989 Biophys J.
+k1b=100  23800 23800 50    10      Not Used
+mu1b=160   550 5500  50.    10.   	20000input as mu.  It is changed to  1/mu.  mu is the dash pot coefficient and has units nN min/mm
+param1c=100               parameter in nonlinear spring function c axis
+k2c=1 4330 150  75             Surface tension in  nN/mm c axis
+k1c=100 23800 23800 50    10      not used
+mu1c=160 550 5500  50.    10.   	20000input as mu.  It is changed to  1/mu.  mu is the dash pot coefficient and has units nN min/mm c axis
+mindist=-0.15			Overlap distance for cell, makes cells spacefilling 
+dia=10				diameter of cell (in microns)
+act_force=0.01 	70	active force nN  520 is the critical pressure in Scharwz assuming an area of 10^-6 cm^2.
+actb_force=00.			active boundary force nN adhesion with surface
+randforce=0. 			active random force nN
+
+For PST Cells
+
+param1a=100               parameter in nonlinear spring function a axis
+k2a= 1    150  75            Surface tension in  nN/mm a axis  for Dd it is 4330 nN/mm see Schwarz 2000 J Cell Science
+k1a=100    23800   23800    50    10      not used
+mu1a=160 550 5500    50.    10.   	20000input as mu.  It is changed to  1/mu.  mu is the dash pot coefficient and has units nN min/mm 8.3
+param1b=100               parameter in nonlinear spring function b axis
+k2b=1  150  75             Surface tension in  nN/mm b axis for leucocytes it is 35 nN/mm see Evans and Yeung 1989 Biophys J.
+k1b=100  23800 23800 50    10      Not Used
+mu1b=160   550 5500  50.    10.   	20000input as mu.  It is changed to  1/mu.  mu is the dash pot coefficient and has units nN min/mm
+param1c=100               parameter in nonlinear spring function c axis
+k2c=1 150  75             Surface tension in  nN/mm c axis
+k1c=100  23800 23800 50    10      not used
+mu1c=160 550 5500  50.    10.   	20000input as mu.  It is changed to  1/mu.  mu is the dash pot coefficient and has units nN min/mm c axis
+act_force=.4  	70	active force nN  520 is the critical pressure in Scharwz assuming an area of 10^-6 cm^2.
+actb_force=00.			active boundary force nN adhesion with surface
+randforce=0. 			active random force nN
+		
+skipx=2.0			Extra space of grids around the slug where
+skipy=40.0				no cells exist.
+skipz=0.6
+plate_height=2.  		The location of a upper boundary plate in mm
+turning_time=.33                time the cell takes to turn in minutes 20/60
+
+time_to_redirect=2.		Time to reset motion direction cue
+cone_angle=90		psp	Half angle of cone for motion direction
+cone_angle=15		pst
+outputfilename=cell_output.dat  	Output File name
+
+
+
